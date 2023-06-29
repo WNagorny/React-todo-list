@@ -28,8 +28,13 @@ function App() {
 
 	useEffect(() => {
 		let savedTasks = JSON.parse(localStorage.getItem('todolist'))
+		let savedCompletedTasks = JSON.parse(localStorage.getItem('completedTasks'))
 		if(savedTasks) {
 			setAllTasks(savedTasks)
+		}
+
+		if(savedCompletedTasks) {
+			setCompletedTasks(savedCompletedTasks)
 		}
 	}, [])
 
@@ -63,6 +68,18 @@ function App() {
 		setCompletedTasks(updatedCompleteArr)
 
 		handleDeleteTask(index)
+
+		localStorage.setItem('completedTasks', JSON.stringify(updatedCompleteArr))
+
+	}
+
+	const handleDeleteCompletedTask = (index) => {
+		let reducedTask = [...completedTasks]
+		reducedTask.splice(index, 1)
+			console.log(index)
+
+		setCompletedTasks(reducedTask)
+		localStorage.setItem('completedTasks', JSON.stringify(reducedTask))
 	}
 	
 	return (
@@ -138,7 +155,7 @@ function App() {
 						</div>
 
 						<div>
-							<MdDeleteForever className='icon' onClick={() => handleDeleteTask(index)}/>
+							<MdDeleteForever className='icon' onClick={() => handleDeleteCompletedTask(index)}/>
 						</div>
 					</div>
 					})}
