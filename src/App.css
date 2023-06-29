@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	background-color: #1f1e1e;
+	color: white;
+	overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+	margin-top: 8rem;
+	text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.todo-wrapper {
+	background-color: #353434;
+	padding: 2%;
+	width: fit-content;
+	margin: 0 auto;
+	margin-top: 3%;
+	max-height: 80vh;
+	overflow-y: auto;
+	box-shadow: 0px 3px 7px rgba(143, 81, 193, 0.864);
+	color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-input {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px solid gray;
+	padding-bottom: 25px;
+	margin-bottom: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-input-item {
+	display: flex;
+	flex-direction: column;
+	/* align-items: flex-start; */
+	margin-right: 25px;
+	/* background-color: red; */
+}
+
+.todo-input-item label {
+	font-size: 1.8rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.todo-input-item input {
+	padding: 10px 15px;
+	width: 250px;
+	border: none;
+}
+
+.todo-input-item input:focus {
+	outline: 2px solid rgb(116, 52, 181);
+}
+
+.primaryBtn {
+	background-color: rgba(143, 81, 193, 0.864);
+	color: white;
+	border: none;
+	border-radius: 4px;
+	margin-top: 47px;
+	padding: 10px 15px;
+	width: 70px;
+	cursor: pointer;
+}
+
+.primaryBtn:hover {
+	background-color: rgb(118, 63, 174);
+}
+
+.secondaryBtn {
+	background-color: rgba(101, 100, 101, 0.864);
+	color: white;
+	border: none;
+	border-radius: 4px;
+	margin-top: 47px;
+	padding: 10px 15px;
+	width: fit-content;
+	cursor: pointer;
+}
+
+.active{
+	background-color: rgb(52, 181, 76)
 }
