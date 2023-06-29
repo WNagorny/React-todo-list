@@ -31,6 +31,15 @@ function App() {
 			setAllTasks(savedTasks)
 		}
 	}, [])
+
+	const handleDeleteTask = (index) => {
+		let reducedTask = [...allTasks]
+		reducedTask.splice(index, 1)
+			console.log(index)
+
+		setAllTasks(reducedTask)
+		localStorage.setItem('todolist', JSON.stringify(reducedTask))
+	}
 	
 	return (
 		<div className='App'>
@@ -90,7 +99,7 @@ function App() {
 						</div>
 
 						<div>
-							<MdDeleteForever className='icon' />
+							<MdDeleteForever className='icon' onClick={() => handleDeleteTask(index)}/>
 							<BsCheckCircle className='check-icon' />
 						</div>
 					</div>
