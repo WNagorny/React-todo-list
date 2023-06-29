@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { MdDeleteForever } from 'react-icons/md'
+import { BsCheckCircle } from 'react-icons/bs'
 import './App.css'
 
 function App() {
@@ -48,8 +50,15 @@ function App() {
 
 				<div className='todo-list'>
 					<div className='todo-list-item'>
-						<h3>Task 1</h3>
-						<p>Description</p>
+						<div>
+							<h3>Task 1</h3>
+							<p>Description</p>
+						</div>
+
+						<div>
+							<MdDeleteForever className='icon' />
+							<BsCheckCircle className='check-icon' />
+						</div>
 					</div>
 				</div>
 			</div>
