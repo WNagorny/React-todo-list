@@ -1,11 +1,37 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { MdDeleteForever } from 'react-icons/md'
 import { BsCheckCircle } from 'react-icons/bs'
 import './App.css'
 
 function App() {
-	const [isComplete, setIsColmplete] = useState(false)
+	const [isComplete, setIsColmplete] = useState(false);
+	const [allTasks, setAllTasks] = useState([]);
+	const [newTitle, setNewTitle] = useState('');
+	const [newDescription, setNewDescription] = useState('');
+	
 
+	const handleAddNewTask = () => {
+		let newTodoTask = {
+			title:newTitle,
+			description:newDescription
+		}
+
+		let updatedTaskArr = [...allTasks];
+
+		updatedTaskArr.push(newTodoTask)
+		setAllTasks(updatedTaskArr)
+		setNewTitle('')
+		setNewDescription('')
+		localStorage.setItem('todolist', JSON.stringify(updatedTaskArr))
+	}	
+
+	useEffect(() => {
+		let savedTasks = JSON.parse(localStorage.getItem('todolist'))
+		if(savedTasks) {
+			setAllTasks(savedTasks)
+		}
+	}, [])
+	
 	return (
 		<div className='App'>
 			<h1>My todos</h1>
@@ -14,19 +40,26 @@ function App() {
 				<div className='todo-input'>
 					<div className='todo-input-item'>
 						<label>Title</label>
-						<input type='text' placeholder="What's the task title?" />
+						<input
+							type='text'
+							placeholder="What's the task title?"
+							value={newTitle}
+							onChange={(e) => setNewTitle(e.target.value)}
+						/>
 					</div>
 
 					<div className='todo-input-item'>
 						<label>Description</label>
 						<input
 							type='text'
-							placeholder="What's the task description?uhguyg"
+							placeholder="What's the task description?"
+							value={newDescription}
+							onChange={(e) => setNewDescription(e.target.value)}
 						/>
 					</div>
 
 					<div className='todo-input-item'>
-						<button type='button' className='primaryBtn'>
+						<button type='button' className='primaryBtn' onClick={handleAddNewTask}>
 							Add
 						</button>
 					</div>
@@ -49,10 +82,11 @@ function App() {
 				</div>
 
 				<div className='todo-list'>
-					<div className='todo-list-item'>
+					{allTasks.map((item, index) => {
+						return <div className='todo-list-item' key={index}>
 						<div>
-							<h3>Task 1</h3>
-							<p>Description</p>
+							<h3>{item.title}</h3>
+							<p>{item.description}</p>
 						</div>
 
 						<div>
@@ -60,6 +94,7 @@ function App() {
 							<BsCheckCircle className='check-icon' />
 						</div>
 					</div>
+					})}
 				</div>
 			</div>
 		</div>
