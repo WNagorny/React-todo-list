@@ -8,6 +8,7 @@ function App() {
 	const [allTasks, setAllTasks] = useState([]);
 	const [newTitle, setNewTitle] = useState('');
 	const [newDescription, setNewDescription] = useState('');
+	const [completedTasks, setCompletedTasks] = useState([]);
 	
 
 	const handleAddNewTask = () => {
@@ -39,6 +40,29 @@ function App() {
 
 		setAllTasks(reducedTask)
 		localStorage.setItem('todolist', JSON.stringify(reducedTask))
+	}
+
+	const handleComplete = (index) => {
+		let now = new Date();
+		let day =now.getDate()
+		let month = now.getMonth() + 1;
+		let year = now.getFullYear();
+		let hour = now.getHours()
+		let minutes = now.getMinutes();
+		let seconds = now.getSeconds();
+
+		let completedOn = `${day} - ${month} - ${year} at ${hour} : ${minutes} : ${seconds}`
+
+		let filteredItem = {
+			...allTasks[index],
+			completedOn: completedOn
+		}
+
+		let updatedCompleteArr = [...completedTasks];
+		updatedCompleteArr.push(filteredItem)
+		setCompletedTasks(updatedCompleteArr)
+
+		handleDeleteTask(index)
 	}
 	
 	return (
@@ -91,7 +115,7 @@ function App() {
 				</div>
 
 				<div className='todo-list'>
-					{allTasks.map((item, index) => {
+					{isComplete === false && allTasks.map((item, index) => {
 						return <div className='todo-list-item' key={index}>
 						<div>
 							<h3>{item.title}</h3>
@@ -100,7 +124,21 @@ function App() {
 
 						<div>
 							<MdDeleteForever className='icon' onClick={() => handleDeleteTask(index)}/>
-							<BsCheckCircle className='check-icon' />
+							<BsCheckCircle className='check-icon' onClick={()=> handleComplete(index)} />
+						</div>
+					</div>
+					})}
+
+					{isComplete === true && completedTasks.map((item, index) => {
+						return <div className='todo-list-item' key={index}>
+						<div>
+							<h3>{item.title}</h3>
+							<p>{item.description}</p>
+							<p><small>Completed on: {item.completedOn}</small></p>
+						</div>
+
+						<div>
+							<MdDeleteForever className='icon' onClick={() => handleDeleteTask(index)}/>
 						</div>
 					</div>
 					})}
