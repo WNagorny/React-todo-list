@@ -158,7 +158,7 @@ function App() {
 										<p>{item.description}</p>
 									</div>
 
-									<div>
+									<div className='icons'>
 										<MdDeleteForever
 											className='icon'
 											onClick={() => handleDeleteTask(index)}
