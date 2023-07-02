@@ -1,34 +1,34 @@
-Todo-List
-This is a simple todo-list application written in JavaScript using the React library. The application allows adding, deleting, and marking tasks as completed. Additionally, the application implements saving the state of the application in the browser's local storage using localStorage.
+# Todo-List
 
-Features
-Adding a New Task
-To add a new task, enter the title and description of the task in the respective text fields at the top of the application, and then click the "Add" button. The new task will be added to the list of tasks to be done.
+This repository contains a simple todo-list application built with JavaScript and React. The application allows users to manage their tasks by adding new tasks, marking tasks as completed, and deleting tasks. The application also includes the functionality to store the tasks locally using the browser's local storage.
 
-Deleting a Task
-To delete a task from the list, simply click the trash icon next to the task. The task will be immediately removed from both the list of tasks to be done and the list of completed tasks (if it has been marked as completed).
+## Features
 
-Marking a Task as Completed
-To mark a task as completed, click the checkmark icon next to the task. The task will be moved from the list of tasks to be done to the list of completed tasks. The completion time of the task will also be displayed.
+1. Add New Task: Users can add new tasks by providing a title and description for the task. Clicking the "Add" button will add the task to the list.
 
-Deleting a Task from the Completed List
-Completed tasks are displayed in a separate section below the list of tasks to be done. To delete a task from the completed list, simply click the trash icon next to the task. The task will be immediately removed from the completed list.
+2. Delete Task: Users can delete tasks from the list by clicking the trash icon next to the task. The task will be immediately removed from the list.
 
-Switching between Todo and Completed View
-At the bottom of the application, there is a section of buttons that allow switching between the view of tasks to be done and the view of completed tasks. Clicking the "Todo" button will display the tasks to be done, and clicking the "Completed" button will display the completed tasks.
+3. Mark Task as Completed: Users can mark tasks as completed by clicking the checkmark icon next to the task. The task will be moved to the completed tasks section and display the completion time.
 
-Validation of Title and Description Fields
-If either the title or description field of a task is empty when trying to add the task, a warning message in red color will appear, indicating the need to enter both values.
+4. Delete Completed Task: Completed tasks can be deleted by clicking the trash icon next to the task in the completed tasks section. The task will be immediately removed from the list.
 
-Technologies Used
-React
-JavaScript
-CSS
-Running the Application
-Clone this repository to your device.
-Open the project folder in your code editor.
-In the terminal, navigate to the project folder.
-Run the command npm install to install the dependencies.
-Once the installation is complete, run the command npm start to start the application in development mode.
-The application will run in your browser at http://localhost:3000.
-This is a basic README for this todo-list code. You can customize it by adding more information about installation, testing, and any other details you find relevant.
+5. Switch Between Todo and Completed View: Users can switch between the todo and completed tasks view by clicking the respective buttons at the bottom of the application.
+
+6. Validation of Title and Description Fields: The application validates the title and description fields when adding a new task. If either field is empty, a warning message will be displayed.
+
+Technologies Used:
+ - React
+ - JavaScript
+ - CSS
+
+
+## Getting Started
+
+Follow the steps below to get started with the todo-list application:
+
+Clone the repository to your local machine.
+Navigate to the project directory.
+Install the dependencies by running npm install in your terminal.
+Start the application by running npm start.
+Open your web browser and go to http://localhost:3000 to view the application.
+License
