@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+Todo-List
+This is a simple todo-list application written in JavaScript using the React library. The application allows adding, deleting, and marking tasks as completed. Additionally, the application implements saving the state of the application in the browser's local storage using localStorage.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Adding a New Task
+To add a new task, enter the title and description of the task in the respective text fields at the top of the application, and then click the "Add" button. The new task will be added to the list of tasks to be done.
 
-## Available Scripts
+Deleting a Task
+To delete a task from the list, simply click the trash icon next to the task. The task will be immediately removed from both the list of tasks to be done and the list of completed tasks (if it has been marked as completed).
 
-In the project directory, you can run:
+Marking a Task as Completed
+To mark a task as completed, click the checkmark icon next to the task. The task will be moved from the list of tasks to be done to the list of completed tasks. The completion time of the task will also be displayed.
 
-### `npm start`
+Deleting a Task from the Completed List
+Completed tasks are displayed in a separate section below the list of tasks to be done. To delete a task from the completed list, simply click the trash icon next to the task. The task will be immediately removed from the completed list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Switching between Todo and Completed View
+At the bottom of the application, there is a section of buttons that allow switching between the view of tasks to be done and the view of completed tasks. Clicking the "Todo" button will display the tasks to be done, and clicking the "Completed" button will display the completed tasks.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Validation of Title and Description Fields
+If either the title or description field of a task is empty when trying to add the task, a warning message in red color will appear, indicating the need to enter both values.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Technologies Used
+React
+JavaScript
+CSS
+Running the Application
+Clone this repository to your device.
+Open the project folder in your code editor.
+In the terminal, navigate to the project folder.
+Run the command npm install to install the dependencies.
+Once the installation is complete, run the command npm start to start the application in development mode.
+The application will run in your browser at http://localhost:3000.
+This is a basic README for this todo-list code. You can customize it by adding more information about installation, testing, and any other details you find relevant.
